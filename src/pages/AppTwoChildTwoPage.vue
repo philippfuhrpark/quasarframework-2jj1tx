@@ -11,7 +11,7 @@ export default defineComponent({
   name: 'AppTwoChildTwoPage',
   components: {},
   setup() {
-    console.log('init setup app two, child one');
+    console.log('init setup app two, child two');
 
     return {};
   },

@@ -18,11 +18,12 @@
       />
     </q-tabs>
 
-    <router-view v-slot="{ Component }">
-      <keep-alive>
+    <keep-alive>
+      <router-view-wrapper v-slot="{ Component }">
         <component :is="Component"></component>
-      </keep-alive>
-    </router-view>
+      </router-view-wrapper>
+    </keep-alive>
+
   </q-page>
 </template>
 
@@ -31,10 +32,11 @@ import { defineComponent, ref, watch, computed } from 'vue';
 import { BaseNavigationRecord } from '../model/BaseNavigationRecord';
 
 import { useRoute, useRouter } from 'vue-router';
+import RouterViewWrapper from "components/RouterViewWrapper.vue";
 
 export default defineComponent({
   name: 'AppOnePage',
-  components: {},
+  components: {RouterViewWrapper},
   setup() {
     console.log('init setup appOnePage');
 
